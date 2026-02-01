@@ -1,0 +1,47 @@
+{
+  // 输入数据路径
+  "input_root": "./train-LibriSpeech_cutstr",
+
+  // 输出CSV文件路径
+  "output_dir": "./dataset/csv",
+
+  // 输出音频文件路径
+  "audio_output_dir": "./dataset/data",
+
+  // 总文件数量
+  "total_files": 120,
+
+  // 支持的音源数量列表（鸟声个体数量）
+  "n_sources_list": [2, 3, 4],
+
+  // 最小音频长度（秒）- 适合鸟声片段
+  "min_length_sec": 4.0,
+
+  // 采样率 - 16kHz适合鸟声分析
+  "sample_rate": 16000,
+
+  // 数据集分割比例
+  "split_ratio": {
+    "tr": 0.7,    // 训练集70%
+    "cv": 0.2,    // 验证集20%
+    "tt": 0.1     // 测试集10%
+  },
+
+  // 鸟声个体分离特定参数
+  "bird_voice_params": {
+    // SNR范围 - 鸟声混合的信噪比范围
+    "snr_range": [-3, 3],
+    
+    // 最小SNR差异 - 避免过于相似的音量
+    "min_snr_diff": 0.3,
+    
+    // 个体标签生成
+    "generate_identity_labels": true,
+    
+    // 时间一致性参数
+    "temporal_consistency": {
+      "enabled": true,
+      "memory_size": 10
+    }
+  }
+}

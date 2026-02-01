@@ -1,0 +1,24 @@
+{
+  "input_root": "./train-LibriSpeech_cutstr",
+
+  "output_dir": "./dataset/csv",
+
+  "audio_output_dir": "./dataset/data",
+
+  "total_files": 1000,
+
+  "n_sources_list": [2,3,4],
+
+  "min_length_sec": 4.0,
+
+  "sample_rate": 8000,
+
+  "split_ratio": {
+
+    "tr": 0.6,
+
+    "cv": 0.3,
+
+    "tt": 0.1
+  }
+}
